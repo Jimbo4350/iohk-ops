@@ -42,7 +42,7 @@ in
       description  = "Deploy the deployer";
       group        = "deployers";
       extraGroups  = [ "wheel" ];
-      openssh.authorizedKeys.keys = devOpsKeys;
+      openssh.authorizedKeys.keys = devOpsKeys ++ mantisOpsKeys;
     };
   };
 }
