@@ -16,11 +16,11 @@
   users.users.log-classifier.extraGroups = [ "keys" ];
 
   deployment.keys = {
-    app_users = {
+    "app_users.json" = {
       keyFile = ../static/log-classifier/app_users.json;
       user = "log-classifier";
     };
-    zendesk_token = {
+    token = {
       keyFile = ../static/zendesk_token.secret;
       user = "log-classifier";
     };
@@ -28,7 +28,7 @@
       keyFile = ../static/log-classifier/assign_to;
       user = "log-classifier";
     };
-    knowledge = {
+    "knowledge.csv" = {
       keyFile = ../static/log-classifier/knowledge.csv;
       user = "log-classifier";
     };

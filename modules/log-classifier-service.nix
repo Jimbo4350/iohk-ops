@@ -40,7 +40,20 @@ in {
         locations."/" = {
           proxyPass = "http://127.0.0.1:8100";
         };
+        extraConfig = ''
+          if_modified_since off;
+          add_header Last-Modified "";
+          etag off;
+        '';
       };
+      eventsConfig = ''
+        worker_connections 1024;
+      '';
+
+      appendConfig = ''
+        worker_processes 4;
+        worker_rlimit_nofile 2048;
+      '';
     };
     systemd.services."log-classifier" = {
       wantedBy = [ "multi-user.target" ];
